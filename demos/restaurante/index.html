@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>La Parra · Restaurante mediterráneo</title>
+  <meta name="description" content="La Parra — cocina mediterránea de mercado en el corazón de la ciudad. Reserva tu mesa y disfruta de una experiencia única." />
+
+  <!-- Tipografías: Playfair Display (títulos) + Jost (texto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#inicio" class="brand">La&nbsp;Parra</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#historia">Historia</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#carta">Carta</a>
+        <a href="#galeria">Galería</a>
+        <a href="#reservar" class="nav-cta">Reservar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="inicio" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Cocina mediterránea de mercado</p>
+      <h1 class="hero-title">La Parra</h1>
+      <p class="hero-sub">
+        Sabores honestos, producto de temporada y una experiencia
+        para disfrutar sin prisa.
+      </p>
+      <div class="hero-actions">
+        <a href="#reservar" class="btn btn-solid">Reservar mesa</a>
+        <a href="#carta" class="btn btn-ghost">Ver la carta</a>
+      </div>
+    </div>
+    <a href="#historia" class="hero-scroll" aria-label="Bajar">˅</a>
+  </section>
+
+  <!-- ============ HISTORIA ============ -->
+  <section id="historia" class="section historia">
+    <div class="container historia-grid">
+      <div class="historia-img">
+        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=800&q=80&auto=format&fit=crop" alt="Interior del restaurante La Parra" loading="lazy" />
+      </div>
+      <div class="historia-text">
+        <p class="eyebrow">Nuestra historia</p>
+        <h2>Tradición y producto,<br />desde 1998</h2>
+        <p>
+          Nacimos como una pequeña taberna familiar y hoy seguimos con la misma
+          filosofía: respetar el producto, cocinar con mimo y tratar a cada
+          comensal como en casa.
+        </p>
+        <p>
+          Trabajamos con productores locales y una carta que cambia con las
+          estaciones, porque lo bueno llega cuando tiene que llegar.
+        </p>
+        <div class="historia-stats">
+          <div><strong>25+</strong><span>años de historia</span></div>
+          <div><strong>100%</strong><span>producto local</span></div>
+          <div><strong>4.9★</strong><span>valoración media</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ESPECIALIDADES ============ -->
+  <section id="especialidades" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Lo que nos hace únicos</p>
+        <h2>Nuestras especialidades</h2>
+      </div>
+
+      <div class="specials">
+        <article class="special">
+          <div class="special-img">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=600&q=80&auto=format&fit=crop" alt="Pasta artesana" loading="lazy" />
+          </div>
+          <h3>Pasta artesana</h3>
+          <p>Elaborada cada mañana con sémola italiana y huevo de corral.</p>
+        </article>
+
+        <article class="special">
+          <div class="special-img">
+            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&q=80&auto=format&fit=crop" alt="Carnes a la brasa" loading="lazy" />
+          </div>
+          <h3>Carnes a la brasa</h3>
+          <p>Maduradas en casa y hechas al carbón de encina a fuego lento.</p>
+        </article>
+
+        <article class="special">
+          <div class="special-img">
+            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80&auto=format&fit=crop" alt="Pescado del día" loading="lazy" />
+          </div>
+          <h3>Pescado del día</h3>
+          <p>Directo de la lonja, según lo mejor que traiga cada jornada.</p>
+        </article>
+
+        <article class="special">
+          <div class="special-img">
+            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80&auto=format&fit=crop" alt="Postres caseros" loading="lazy" />
+          </div>
+          <h3>Postres caseros</h3>
+          <p>Repostería propia para un final dulce e inolvidable.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CARTA ============ -->
+  <section id="carta" class="section carta">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Buen provecho</p>
+        <h2>La carta</h2>
+      </div>
+
+      <div class="menu-grid">
+        <!-- Entrantes -->
+        <div class="menu-col">
+          <h3 class="menu-cat">Entrantes</h3>
+          <ul class="menu-list">
+            <li>
+              <div class="menu-item-head"><span>Burrata con tomate de rama</span><span class="dots"></span><span class="price">9,50</span></div>
+              <p class="menu-desc">Albahaca fresca, aceite de oliva virgen extra.</p>
+            </li>
+            <li>
+              <div class="menu-item-head"><span>Croquetas de jamón ibérico</span><span class="dots"></span><span class="price">8,00</span></div>
+              <p class="menu-desc">Cremosas por dentro, crujientes por fuera (6 uds).</p>
+            </li>
+            <li>
+              <div class="menu-item-head"><span>Pulpo a la brasa</span><span class="dots"></span><span class="price">16,00</span></div>
+              <p class="menu-desc">Sobre parmentier de patata y pimentón de la Vera.</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Principales -->
+        <div class="menu-col">
+          <h3 class="menu-cat">Principales</h3>
+          <ul class="menu-list">
+            <li>
+              <div class="menu-item-head"><span>Risotto de setas y trufa</span><span class="dots"></span><span class="price">15,50</span></div>
+              <p class="menu-desc">Arroz carnaroli, parmesano 24 meses.</p>
+            </li>
+            <li>
+              <div class="menu-item-head"><span>Solomillo a la brasa</span><span class="dots"></span><span class="price">22,00</span></div>
+              <p class="menu-desc">Con reducción de vino tinto y patata confitada.</p>
+            </li>
+            <li>
+              <div class="menu-item-head"><span>Lubina a la espalda</span><span class="dots"></span><span class="price">19,50</span></div>
+              <p class="menu-desc">Verduras de temporada y refrito de ajo.</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Postres -->
+        <div class="menu-col">
+          <h3 class="menu-cat">Postres</h3>
+          <ul class="menu-list">
+            <li>
+              <div class="menu-item-head"><span>Coulant de chocolate</span><span class="dots"></span><span class="price">6,50</span></div>
+              <p class="menu-desc">Con helado de vainilla bourbon.</p>
+            </li>
+            <li>
+              <div class="menu-item-head"><span>Tarta de queso al horno</span><span class="dots"></span><span class="price">6,00</span></div>
+              <p class="menu-desc">Receta de la casa, textura cremosa.</p>
+            </li>
+            <li>
+              <div class="menu-item-head"><span>Sorbete de limón al cava</span><span class="dots"></span><span class="price">5,00</span></div>
+              <p class="menu-desc">Ligero y refrescante para acabar.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="carta-note">* Consulta nuestro menú del día (16,50 €) y opciones vegetarianas y sin gluten.</p>
+    </div>
+  </section>
+
+  <!-- ============ GALERÍA ============ -->
+  <section id="galeria" class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">El ambiente</p>
+        <h2>Galería</h2>
+      </div>
+
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80&auto=format&fit=crop" alt="Ambiente del restaurante" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80&auto=format&fit=crop" alt="Plato gourmet" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?w=600&q=80&auto=format&fit=crop" alt="Detalle de mesa" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80&auto=format&fit=crop" alt="Copa de vino" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1592861956120-e524fc739696?w=600&q=80&auto=format&fit=crop" alt="Plato emplatado" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=600&q=80&auto=format&fit=crop" alt="Café y postre" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESERVAR ============ -->
+  <section id="reservar" class="section reservar">
+    <div class="container reservar-grid">
+      <div class="reservar-info">
+        <p class="eyebrow">Te esperamos</p>
+        <h2>Reserva tu mesa</h2>
+        <p>Déjanos tus datos y confirmamos tu reserva en unos minutos.</p>
+
+        <ul class="info-list">
+          <li><strong>📍 Dirección</strong> Calle Mayor 12, Centro</li>
+          <li><strong>🕑 Horario</strong> Mar–Dom · 13:00–16:00 y 20:00–23:30</li>
+          <li><strong>📞 Teléfono</strong> 600 12 34 56</li>
+        </ul>
+      </div>
+
+      <form class="reservar-form" id="reservaForm" novalidate>
+        <div class="field">
+          <label for="r-nombre">Nombre</label>
+          <input type="text" id="r-nombre" required />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="r-fecha">Fecha</label>
+            <input type="date" id="r-fecha" required />
+          </div>
+          <div class="field">
+            <label for="r-hora">Hora</label>
+            <input type="time" id="r-hora" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="r-personas">Personas</label>
+            <select id="r-personas">
+              <option>1</option><option>2</option><option>3</option>
+              <option>4</option><option>5</option><option>6+</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="r-tel">Teléfono</label>
+            <input type="tel" id="r-tel" required />
+          </div>
+        </div>
+        <button type="submit" class="btn btn-solid full">Confirmar reserva</button>
+        <p class="form-status" id="reservaStatus" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="brand">La Parra</p>
+        <p class="footer-tag">Cocina mediterránea de mercado</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>Contacto</h4>
+          <p>Calle Mayor 12, Centro</p>
+          <p>600 12 34 56</p>
+          <p>hola@laparra.com</p>
+        </div>
+        <div>
+          <h4>Horario</h4>
+          <p>Martes a Domingo</p>
+          <p>13:00 – 16:00</p>
+          <p>20:00 – 23:30</p>
+        </div>
+        <div>
+          <h4>Síguenos</h4>
+          <p><a href="#">Instagram</a></p>
+          <p><a href="#">Facebook</a></p>
+          <p><a href="#">TripAdvisor</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> La Parra · Web demo creada por <strong>&lt;Kodix/&gt;</strong></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+/* ============================================================
+   FONTANERÍA RÁPIDA — Landing · Estilos
+   Azul confianza + naranja urgencia. Orientado a conversión.
+   ============================================================ */
+
+:root {
+  --azul: #0b3d63;           /* azul profundo */
+  --azul-medio: #12547f;
+  --azul-claro: #1d9bf0;     /* cyan agua */
+  --naranja: #ff6b35;        /* CTA urgencia */
+  --naranja-oscuro: #e8551f;
+  --wa: #25d366;             /* verde WhatsApp */
+  --wa-oscuro: #1da851;
+  --fondo: #ffffff;
+  --gris: #f2f6fa;           /* secciones claras */
+  --tinta: #10222e;          /* texto principal */
+  --tinta-suave: #5a6b78;    /* texto secundario */
+  --borde: #e2ebf2;
+
+  --sans: "Manrope", system-ui, sans-serif;
+  --radio: 14px;
+  --max: 1160px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--fondo);
+  color: var(--tinta);
+  line-height: 1.65;
+  font-weight: 400;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+
+.eyebrow { text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.8rem; font-weight: 700; color: var(--naranja); margin-bottom: 0.8rem; }
+.eyebrow.light { color: var(--azul-claro); }
+h1, h2, h3 { font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.9rem, 4.5vw, 2.9rem); }
+
+.section { padding: 5.5rem 0; }
+.section-dark { background: var(--azul); color: #fff; }
+.section-light { background: var(--gris); }
+.section-head { text-align: center; max-width: 620px; margin: 0 auto 3.5rem; }
+.section-lead { color: var(--tinta-suave); margin-top: 0.8rem; }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--sans); font-weight: 700; font-size: 1rem;
+  padding: 1rem 1.8rem; border-radius: var(--radio); cursor: pointer;
+  border: none; transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+.btn-call { background: var(--naranja); color: #fff; box-shadow: 0 8px 20px rgba(255,107,53,0.35); }
+.btn-call:hover { background: var(--naranja-oscuro); transform: translateY(-2px); }
+.btn-wa { background: var(--wa); color: #fff; box-shadow: 0 8px 20px rgba(37,211,102,0.3); }
+.btn-wa:hover { background: var(--wa-oscuro); transform: translateY(-2px); }
+.btn.big { font-size: 1.15rem; padding: 1.2rem 2.2rem; }
+
+/* ============================================================
+   TOPBAR + NAV
+   ============================================================ */
+.topbar { background: var(--naranja); color: #fff; text-align: center; font-size: 0.85rem; font-weight: 600; padding: 0.5rem; }
+.nav { position: sticky; top: 0; z-index: 100; background: #fff; box-shadow: 0 2px 15px rgba(0,0,0,0.06); }
+.nav-inner { max-width: var(--max); margin: 0 auto; padding: 0.9rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+.brand { font-size: 1.3rem; font-weight: 700; color: var(--azul); }
+.brand strong { color: var(--azul-claro); }
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a { font-size: 0.95rem; font-weight: 600; color: var(--tinta-suave); transition: color 0.2s; }
+.nav-links a:hover { color: var(--azul); }
+.nav-phone { background: var(--azul); color: #fff !important; padding: 0.6rem 1.2rem; border-radius: 10px; }
+.nav-phone:hover { background: var(--azul-medio); }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+.nav-toggle span { width: 26px; height: 3px; background: var(--azul); border-radius: 3px; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero { background: linear-gradient(135deg, #0b3d63 0%, #12547f 100%); color: #fff; padding: 4.5rem 0 5rem; position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; top: -30%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(29,155,240,0.25), transparent 70%); }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; align-items: center; position: relative; z-index: 2; }
+.hero-tag { display: inline-block; background: rgba(255,107,53,0.2); border: 1px solid var(--naranja); color: #ffd9c9; padding: 0.45rem 1rem; border-radius: 40px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.5rem; }
+.hero-text h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1.3rem; }
+.hero-text h1 span { color: var(--naranja); }
+.hero-sub { font-size: 1.15rem; color: #cfe0ee; max-width: 480px; margin-bottom: 2rem; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.hero-trust { display: flex; gap: 2.5rem; }
+.hero-trust strong { display: block; font-size: 1.8rem; color: #fff; }
+.hero-trust span { font-size: 0.85rem; color: #9fbdd4; }
+.hero-media img { width: 100%; border-radius: var(--radio); box-shadow: 0 30px 60px rgba(0,0,0,0.35); }
+
+/* ============================================================
+   FEATURES
+   ============================================================ */
+.features { background: #fff; border-bottom: 1px solid var(--borde); }
+.features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; padding: 2rem 1.5rem; }
+.feature { display: flex; align-items: center; gap: 0.8rem; justify-content: center; }
+.feature span { font-size: 1.6rem; }
+.feature p { font-weight: 600; font-size: 0.95rem; }
+
+/* ============================================================
+   SERVICIOS
+   ============================================================ */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.service { background: #fff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 2rem; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; }
+.service:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(11,61,99,0.12); border-color: var(--azul-claro); }
+.service-ic { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+.service h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.service p { color: var(--tinta-suave); font-size: 0.95rem; }
+
+/* ============================================================
+   PROCESO
+   ============================================================ */
+.steps { display: flex; align-items: stretch; justify-content: center; gap: 1rem; }
+.step { flex: 1; max-width: 300px; text-align: center; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radio); padding: 2.2rem 1.5rem; }
+.step-num { display: inline-flex; align-items: center; justify-content: center; width: 54px; height: 54px; border-radius: 50%; background: var(--naranja); color: #fff; font-size: 1.5rem; font-weight: 800; margin-bottom: 1.2rem; }
+.step h3 { font-size: 1.3rem; margin-bottom: 0.6rem; }
+.step p { color: #cfe0ee; font-size: 0.95rem; }
+.step-arrow { display: flex; align-items: center; font-size: 2rem; color: var(--azul-claro); font-weight: 800; }
+
+/* ============================================================
+   POR QUÉ NOSOTROS
+   ============================================================ */
+.porque-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.porque-media img { width: 100%; border-radius: var(--radio); box-shadow: 0 25px 50px rgba(11,61,99,0.18); }
+.porque-text h2 { margin-bottom: 1.6rem; }
+.porque-list { list-style: none; margin-bottom: 2rem; }
+.porque-list li { position: relative; padding-left: 2rem; margin-bottom: 1.1rem; color: var(--tinta-suave); }
+.porque-list li::before { content: "✔"; position: absolute; left: 0; top: 0; color: var(--wa); font-weight: 800; }
+.porque-list strong { color: var(--tinta); }
+
+/* ============================================================
+   OPINIONES
+   ============================================================ */
+.reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.review { background: #fff; border: 1px solid var(--borde); border-radius: var(--radio); padding: 2rem; box-shadow: 0 10px 30px rgba(11,61,99,0.05); }
+.stars { color: #ffb400; font-size: 1.1rem; letter-spacing: 0.1em; margin-bottom: 0.8rem; }
+.review p { font-size: 1.02rem; margin-bottom: 1rem; }
+.review footer { color: var(--tinta-suave); font-weight: 700; }
+
+/* ============================================================
+   CTA FINAL
+   ============================================================ */
+.cta-final { background: linear-gradient(135deg, #ff6b35, #e8551f); color: #fff; text-align: center; padding: 5rem 0; }
+.cta-final h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.8rem; }
+.cta-final > .container > p { font-size: 1.15rem; margin-bottom: 2rem; opacity: 0.95; }
+.cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.8rem; }
+.cta-final .btn-call { background: #fff; color: var(--naranja-oscuro); }
+.cta-final .btn-call:hover { background: #fff5f0; }
+.cta-zone { font-size: 0.95rem; opacity: 0.9; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer { background: var(--tinta); color: #a9bccb; padding-top: 3.5rem; }
+.footer-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding-bottom: 2.5rem; }
+.footer .brand { color: #fff; font-size: 1.5rem; margin-bottom: 0.4rem; }
+.footer-tag { color: #a9bccb; }
+.footer-info { text-align: right; }
+.footer-info p { margin-bottom: 0.4rem; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; text-align: center; }
+.footer-bottom p { font-size: 0.85rem; }
+.footer-bottom strong { color: #fff; }
+
+/* ============================================================
+   BOTÓN FLOTANTE WHATSAPP
+   ============================================================ */
+.wa-float {
+  position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 200;
+  width: 60px; height: 60px; border-radius: 50%;
+  background: var(--wa); color: #fff; font-size: 1.9rem;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 8px 25px rgba(37,211,102,0.5);
+  transition: transform 0.2s;
+  animation: pulse 2.5s infinite;
+}
+.wa-float:hover { transform: scale(1.1); }
+@keyframes pulse {
+  0% { box-shadow: 0 8px 25px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0.5); }
+  70% { box-shadow: 0 8px 25px rgba(37,211,102,0.5), 0 0 0 18px rgba(37,211,102,0); }
+  100% { box-shadow: 0 8px 25px rgba(37,211,102,0.5), 0 0 0 0 rgba(37,211,102,0); }
+}
+
+/* ============================================================
+   REVEAL
+   ============================================================ */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .hero-grid, .porque-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-media { order: -1; max-width: 480px; }
+  .services, .reviews { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); gap: 1.2rem; }
+  .steps { flex-direction: column; align-items: center; }
+  .step { max-width: 100%; width: 100%; }
+  .step-arrow { transform: rotate(90deg); }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-info { text-align: left; }
+}
+@media (max-width: 640px) {
+  .section { padding: 4rem 0; }
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0; align-items: stretch;
+    background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+  }
+  .nav-links.open { max-height: 400px; }
+  .nav-links a { padding: 1rem 1.5rem; border-bottom: 1px solid var(--borde); }
+  .nav-phone { border-radius: 0; text-align: center; }
+  .services, .reviews { grid-template-columns: 1fr; }
+  .hero-trust { gap: 1.5rem; flex-wrap: wrap; }
+  .hero-actions .btn { flex: 1; justify-content: center; }
+}

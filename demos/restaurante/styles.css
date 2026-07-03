@@ -1,0 +1,291 @@
+/* ============================================================
+   LA PARRA — Restaurante · Estilos
+   Paleta oscura elegante + dorado. Tipografía serif.
+   ============================================================ */
+
+:root {
+  --fondo: #14100d;          /* marrón casi negro */
+  --fondo-alt: #1c1712;      /* secciones alternas */
+  --superficie: #241d17;
+  --dorado: #c9a24b;         /* acento principal */
+  --dorado-claro: #e3c884;
+  --crema: #f5efe6;          /* texto principal */
+  --crema-suave: #b6a992;    /* texto secundario */
+  --borde: #3a2f24;
+
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Jost", system-ui, sans-serif;
+  --radio: 6px;
+  --max: 1160px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--fondo);
+  color: var(--crema);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+.container { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+
+/* ---------- Tipografía de secciones ---------- */
+.eyebrow {
+  font-family: var(--sans);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--dorado);
+  margin-bottom: 0.9rem;
+}
+
+h1, h2, h3 { font-family: var(--serif); font-weight: 700; line-height: 1.15; }
+
+.section { padding: 6.5rem 0; }
+.section-alt { background: var(--fondo-alt); }
+
+.section-head { text-align: center; max-width: 640px; margin: 0 auto 3.5rem; }
+.section-head h2 { font-size: clamp(2rem, 4vw, 2.9rem); }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-block;
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  padding: 0.95rem 2rem;
+  border: 1px solid var(--dorado);
+  border-radius: var(--radio);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn-solid { background: var(--dorado); color: #211a10; }
+.btn-solid:hover { background: var(--dorado-claro); border-color: var(--dorado-claro); transform: translateY(-2px); }
+.btn-ghost { background: transparent; color: var(--crema); }
+.btn-ghost:hover { background: rgba(201,162,75,0.12); transform: translateY(-2px); }
+.btn.full { width: 100%; text-align: center; }
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  transition: background 0.3s ease, padding 0.3s ease;
+  padding: 1.4rem 0;
+}
+.nav.scrolled {
+  background: rgba(20,16,13,0.92);
+  backdrop-filter: blur(10px);
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--borde);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.brand {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--crema);
+  letter-spacing: 0.02em;
+}
+.nav-links { display: flex; align-items: center; gap: 2rem; }
+.nav-links a {
+  font-size: 0.9rem; letter-spacing: 0.05em;
+  color: var(--crema-suave); transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--dorado); }
+.nav-cta {
+  border: 1px solid var(--dorado);
+  padding: 0.5rem 1.2rem; border-radius: var(--radio);
+  color: var(--dorado) !important;
+}
+.nav-cta:hover { background: var(--dorado); color: #211a10 !important; }
+
+.nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; }
+.nav-toggle span { width: 26px; height: 2px; background: var(--crema); transition: 0.3s; }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative; height: 100vh; min-height: 600px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  background: url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1600&q=80&auto=format&fit=crop") center/cover no-repeat fixed;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(20,16,13,0.55) 0%, rgba(20,16,13,0.75) 100%);
+}
+.hero-content { position: relative; z-index: 2; padding: 0 1.5rem; max-width: 760px; }
+.hero-eyebrow {
+  text-transform: uppercase; letter-spacing: 0.3em; font-size: 0.85rem;
+  color: var(--dorado-claro); margin-bottom: 1.4rem;
+}
+.hero-title {
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  line-height: 1; margin-bottom: 1.4rem;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+.hero-sub {
+  font-size: 1.2rem; color: var(--crema);
+  max-width: 520px; margin: 0 auto 2.4rem;
+}
+.hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.hero-scroll {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  z-index: 2; font-size: 2rem; color: var(--dorado);
+  animation: bob 2s ease-in-out infinite;
+}
+@keyframes bob { 0%,100%{ transform: translate(-50%,0);} 50%{ transform: translate(-50%,10px);} }
+
+/* ============================================================
+   HISTORIA
+   ============================================================ */
+.historia-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+}
+.historia-img img { border-radius: var(--radio); box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+.historia-text h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); margin-bottom: 1.4rem; }
+.historia-text p { color: var(--crema-suave); margin-bottom: 1.1rem; }
+.historia-stats { display: flex; gap: 2.5rem; margin-top: 2rem; }
+.historia-stats strong { display: block; font-family: var(--serif); font-size: 2rem; color: var(--dorado); }
+.historia-stats span { font-size: 0.85rem; color: var(--crema-suave); letter-spacing: 0.05em; }
+
+/* ============================================================
+   ESPECIALIDADES
+   ============================================================ */
+.specials { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem; }
+.special { text-align: center; }
+.special-img {
+  aspect-ratio: 1; border-radius: 50%; overflow: hidden;
+  margin: 0 auto 1.4rem; width: 100%; max-width: 220px;
+  border: 2px solid var(--borde);
+  transition: border-color 0.3s, transform 0.3s;
+}
+.special-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.special:hover .special-img { border-color: var(--dorado); transform: translateY(-6px); }
+.special:hover .special-img img { transform: scale(1.08); }
+.special h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+.special p { color: var(--crema-suave); font-size: 0.95rem; padding: 0 0.5rem; }
+
+/* ============================================================
+   CARTA
+   ============================================================ */
+.menu-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+.menu-cat {
+  font-size: 1.5rem; color: var(--dorado);
+  padding-bottom: 0.8rem; margin-bottom: 1.6rem;
+  border-bottom: 1px solid var(--borde);
+}
+.menu-list { list-style: none; }
+.menu-list li { margin-bottom: 1.6rem; }
+.menu-item-head {
+  display: flex; align-items: baseline; gap: 0.5rem;
+  font-family: var(--serif); font-size: 1.08rem; color: var(--crema);
+}
+.menu-item-head .dots { flex: 1; border-bottom: 1px dotted var(--borde); }
+.menu-item-head .price { color: var(--dorado); font-weight: 500; }
+.menu-item-head .price::after { content: " €"; font-size: 0.85em; }
+.menu-desc { font-size: 0.9rem; color: var(--crema-suave); margin-top: 0.3rem; }
+.carta-note { text-align: center; margin-top: 3rem; color: var(--crema-suave); font-size: 0.9rem; font-style: italic; }
+
+/* ============================================================
+   GALERÍA
+   ============================================================ */
+.gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.gallery img {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover;
+  border-radius: var(--radio); cursor: pointer;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: saturate(0.9) brightness(0.92);
+}
+.gallery img:hover { transform: scale(1.03); filter: saturate(1.1) brightness(1); }
+
+/* ============================================================
+   RESERVAR
+   ============================================================ */
+.reservar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.reservar-info h2 { font-size: clamp(1.9rem, 3.5vw, 2.7rem); margin-bottom: 1rem; }
+.reservar-info > p { color: var(--crema-suave); margin-bottom: 2rem; }
+.info-list { list-style: none; }
+.info-list li { margin-bottom: 1.2rem; color: var(--crema-suave); }
+.info-list strong { display: block; color: var(--crema); font-weight: 500; margin-bottom: 0.15rem; }
+
+.reservar-form {
+  background: var(--superficie); padding: 2.5rem; border-radius: var(--radio);
+  border: 1px solid var(--borde);
+}
+.field { margin-bottom: 1.2rem; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.field label { display: block; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--crema-suave); margin-bottom: 0.4rem; }
+.field input, .field select {
+  width: 100%; padding: 0.8rem; background: var(--fondo);
+  border: 1px solid var(--borde); border-radius: var(--radio);
+  color: var(--crema); font-family: var(--sans); font-size: 0.95rem;
+}
+.field input:focus, .field select:focus { outline: none; border-color: var(--dorado); }
+.form-status { margin-top: 1rem; text-align: center; font-weight: 500; min-height: 1.2rem; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer { background: #0e0b09; padding-top: 4rem; }
+.footer-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; padding-bottom: 3rem; }
+.footer .brand { font-size: 2rem; }
+.footer-tag { color: var(--crema-suave); font-size: 0.9rem; }
+.footer-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.footer-cols h4 { font-family: var(--sans); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.85rem; color: var(--dorado); margin-bottom: 1rem; }
+.footer-cols p { color: var(--crema-suave); font-size: 0.9rem; margin-bottom: 0.4rem; }
+.footer-cols a:hover { color: var(--dorado); }
+.footer-bottom { border-top: 1px solid var(--borde); padding: 1.5rem; text-align: center; }
+.footer-bottom p { color: var(--crema-suave); font-size: 0.85rem; }
+.footer-bottom strong { color: var(--dorado); }
+
+/* ============================================================
+   ANIMACIÓN AL HACER SCROLL (reveal)
+   ============================================================ */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .specials { grid-template-columns: repeat(2, 1fr); }
+  .menu-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .historia-grid, .reservar-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .historia-img { order: -1; }
+  .footer-inner { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 4.5rem 0; }
+  .hero { background-attachment: scroll; }
+  .nav-toggle { display: flex; }
+  .nav-links {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0; align-items: stretch;
+    background: rgba(20,16,13,0.98); backdrop-filter: blur(10px);
+    max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+  }
+  .nav-links.open { max-height: 400px; }
+  .nav-links a { padding: 1rem 1.5rem; border-bottom: 1px solid var(--borde); }
+  .nav-cta { border: none !important; color: var(--dorado) !important; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .specials { grid-template-columns: repeat(2, 1fr); }
+  .field-row { grid-template-columns: 1fr; }
+  .historia-stats { gap: 1.5rem; flex-wrap: wrap; }
+}

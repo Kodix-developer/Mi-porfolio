@@ -1,0 +1,497 @@
+/* ============================================================
+   ESTILOS — Web personal de servicios
+   Organizado por bloques. Cambia colores en :root.
+   ============================================================ */
+
+/* ---------- Variables de color y diseño ---------- */
+:root {
+  --color-fondo: #0f172a;        /* azul muy oscuro */
+  --color-fondo-alt: #1e293b;    /* azul oscuro (secciones alternas) */
+  --color-superficie: #1e293b;
+  --color-texto: #e2e8f0;
+  --color-texto-suave: #94a3b8;
+  --color-primario: #2f6bff;     /* azul Kodix (acento) */
+  --color-primario-oscuro: #1e56e6;
+  --color-whatsapp: #25d366;
+  --color-borde: #334155;
+
+  --radio: 12px;
+  --ancho-max: 1100px;
+  --sombra: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --transicion: 0.2s ease;
+}
+
+/* ---------- Reset básico ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ---------- Contenedor central ---------- */
+.container {
+  width: 100%;
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radio);
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform var(--transicion), background var(--transicion), opacity var(--transicion);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--color-primario);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: var(--color-primario-oscuro);
+}
+
+.btn-outline {
+  border-color: var(--color-borde);
+  color: var(--color-texto);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-primario);
+}
+
+.btn-whatsapp {
+  background: var(--color-whatsapp);
+  color: #04350f;
+}
+
+.btn-nav {
+  padding: 0.5rem 1rem;
+  background: var(--color-primario);
+  color: #ffffff;
+}
+
+/* ============================================================
+   CABECERA / NAVEGACIÓN
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-borde);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* Corchetes < /> y las letras "ix" en azul, como el logotipo */
+.logo-b,
+.logo-accent {
+  color: var(--color-primario);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-menu a {
+  color: var(--color-texto-suave);
+  font-weight: 500;
+  transition: color var(--transicion);
+}
+
+.nav-menu a:hover {
+  color: var(--color-texto);
+}
+
+/* Botón hamburguesa (oculto en escritorio) */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  width: 26px;
+  height: 3px;
+  background: var(--color-texto);
+  border-radius: 3px;
+  transition: var(--transicion);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding: 6rem 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.15), transparent 40%),
+    radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.1), transparent 40%);
+}
+
+.hero-content {
+  max-width: 720px;
+}
+
+.hero-eyebrow {
+  color: var(--color-primario);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero-text {
+  font-size: 1.15rem;
+  color: var(--color-texto-suave);
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   SECCIONES GENÉRICAS
+   ============================================================ */
+.section {
+  padding: 5rem 0;
+}
+
+.section-alt {
+  background: var(--color-fondo-alt);
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: var(--color-texto-suave);
+  margin-bottom: 2.5rem;
+}
+
+/* ---------- Rejillas ---------- */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ============================================================
+   TARJETAS DE SERVICIOS
+   ============================================================ */
+.card {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 1.75rem;
+  transition: transform var(--transicion), border-color var(--transicion);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primario);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--color-texto-suave);
+}
+
+/* ============================================================
+   PORTFOLIO
+   ============================================================ */
+.work {
+  background: var(--color-superficie);
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+  transition: transform var(--transicion);
+}
+
+.work:hover {
+  transform: translateY(-4px);
+}
+
+.work-thumb {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.work-thumb-1 { background: linear-gradient(135deg, #f97316, #ea580c); }
+.work-thumb-2 { background: linear-gradient(135deg, #ec4899, #db2777); }
+.work-thumb-3 { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+
+.work-body {
+  padding: 1.25rem;
+}
+
+.work-body h3 {
+  margin-bottom: 0.35rem;
+}
+
+.work-body p {
+  color: var(--color-texto-suave);
+  margin-bottom: 0.75rem;
+}
+
+.work-link {
+  color: var(--color-primario);
+  font-weight: 600;
+}
+
+/* ============================================================
+   SOBRE MÍ
+   ============================================================ */
+.about {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.about-photo {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--color-primario);
+  box-shadow: 0 15px 40px rgba(47, 107, 255, 0.2);
+  flex-shrink: 0;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.about-text p {
+  color: var(--color-texto-suave);
+  margin-bottom: 1rem;
+}
+
+.about-text .btn {
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   TESTIMONIOS
+   ============================================================ */
+.quote {
+  background: var(--color-superficie);
+  border-left: 4px solid var(--color-primario);
+  border-radius: var(--radio);
+  padding: 1.5rem;
+}
+
+.quote p {
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.quote footer {
+  color: var(--color-texto-suave);
+  font-weight: 600;
+}
+
+/* ============================================================
+   CONTACTO
+   ============================================================ */
+.contact {
+  max-width: 640px;
+  text-align: center;
+}
+
+.contact-form {
+  text-align: left;
+  margin: 2rem 0 1.5rem;
+}
+
+.form-row {
+  margin-bottom: 1.25rem;
+}
+
+.form-row label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radio);
+  border: 1px solid var(--color-borde);
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+}
+
+.form-status {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.contact-alt {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  border-top: 1px solid var(--color-borde);
+  padding: 2.5rem 0;
+  text-align: center;
+  color: var(--color-texto-suave);
+}
+
+.footer-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--color-texto);
+  margin-bottom: 0.35rem;
+}
+
+.footer-tagline {
+  color: var(--color-primario);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET Y MÓVIL
+   ============================================================ */
+@media (max-width: 860px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Menú hamburguesa */
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--color-fondo);
+    border-bottom: 1px solid var(--color-borde);
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+    /* Oculto por defecto en móvil */
+    display: none;
+  }
+
+  .nav-menu.open {
+    display: flex;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 4rem 0;
+  }
+}
