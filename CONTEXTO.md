@@ -130,5 +130,42 @@ Para construir la **web personal de servicios**, elegir tecnología:
 
 ---
 
-## ✅ Próximo paso (al retomar)
-Empezar por el **Paso 1: construir la web personal de servicios**. Decidir antes la tecnología (recomendado: HTML/CSS/JS puro) y arrancar creando el proyecto.
+## 📌 ESTADO ACTUAL (actualizado 2026-07-03)
+
+### 🏷️ Marca definida
+- Nombre: **<Kodix/>** (azul `#2f6bff` + negro). Eslogan: *"ideas que construyen futuro"*.
+- Fundador: Alejandro. Logos en `img/` (`logo-kodix.png`, `logo-modelos.png`).
+- **Contacto real:** WhatsApp `34684085186` · Email `kodixdeveloper@gmail.com`.
+
+### ✅ Lo que YA está hecho (Pasos 1 y 2 = técnicos, COMPLETOS)
+- **Web personal Kodix** construida con **HTML/CSS/JS puro** (decisión tomada).
+  - Archivos: `index.html`, `css/styles.css`, `js/main.js`. 7 secciones, responsive, branding aplicado.
+  - Foto real en "Sobre mí" (`img/alejandro.png`).
+- **3 webs demo** en el portfolio, cada una con un estilo distinto a propósito (demuestra versatilidad):
+  - 🍷 `demos/restaurante/` — "La Parra". Oscuro + dorado, Playfair Display.
+  - 💇 `demos/peluqueria/` — "Estilo". Claro nude + rose gold, Cormorant Garamond.
+  - 🔧 `demos/fontaneria/` — "Fontanería Rápida". Landing de conversión azul + naranja, Manrope, botón WhatsApp flotante.
+  - Las 3 están enlazadas desde el portfolio de la web principal.
+- **Git listo:** repo inicializado en `Mi porfolio` con commit inicial hecho y remoto configurado a `https://github.com/Kodix-developer/Mi-porfolio.git`.
+- (Aparte) Se limpió un repo git mal ubicado que había en `C:\Users\alex_` (rastreaba todo el perfil de Windows por error). Eliminado sin afectar archivos.
+
+### ⚠️ Bloqueo actual
+- La cuenta de GitHub **`Kodix-developer` está "flagged"** (marcada por antifraude): da 404 pública/API aunque el dueño la ve logueado.
+- Ya se activó la **2FA** (requisito para contactar soporte). Pendiente: esperar a que se desmarque sola o abrir ticket en `support.github.com/contact`.
+- **El `git push` está en pausa** hasta que la cuenta se active. Cuando lo esté → un solo `git push -u origin main` y subido.
+
+---
+
+## 🎯 LO QUE QUEDA POR HACER (en orden de prioridad)
+
+1. **Desbloquear la cuenta GitHub Kodix-developer** → esperar / abrir ticket de soporte (ya con 2FA activada). *[bloquea el resto de "publicar"]*
+2. **Hacer el `git push`** del portfolio en cuanto la cuenta esté activa (todo listo en local).
+3. **(Opcional) Limpiar el repo** antes o después de subir: quitar de la raíz los PNG duplicados `logo modelos.png`, `logo png.png`, `Mi foto.png` (ya están copiados con nombre limpio en `img/`).
+4. **Publicar en Netlify o Vercel** (gratis, ideal para webs estáticas). Da URL pública tipo `kodix.netlify.app`.
+5. **Comprar el dominio** (`kodix.es`/`.com`, ~10€/año) y apuntarlo a Netlify/Vercel.
+6. **Conectar los formularios** de contacto a un servicio real (Netlify Forms es gratis y automático) para recibir los mensajes por email.
+7. **Google Search Console** → dar de alta la web para que Google la indexe.
+8. **Presencia online** → perfil Instagram/LinkedIn de Kodix con la web enlazada; compartir con círculo cercano.
+9. **A partir de aquí, pasos comerciales** (ver hoja de ruta arriba): kit comercial/precios, primer cliente "fácil", y solo después lo legal (autónomo/gestoría).
+
+> Recordatorio: pasos 1-6 son técnicos (Claude Code ayuda al 100%). Del 7 en adelante entra lo comercial (lo ejecuta Alejandro, con guía).
