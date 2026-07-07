@@ -158,14 +158,26 @@ Para construir la **web personal de servicios**, elegir tecnología:
 
 ## 🎯 LO QUE QUEDA POR HACER (en orden de prioridad)
 
-1. **Desbloquear la cuenta GitHub Kodix-developer** → esperar / abrir ticket de soporte (ya con 2FA activada). *[bloquea el resto de "publicar"]*
-2. **Hacer el `git push`** del portfolio en cuanto la cuenta esté activa (todo listo en local).
-3. **(Opcional) Limpiar el repo** antes o después de subir: quitar de la raíz los PNG duplicados `logo modelos.png`, `logo png.png`, `Mi foto.png` (ya están copiados con nombre limpio en `img/`).
-4. **Publicar en Netlify o Vercel** (gratis, ideal para webs estáticas). Da URL pública tipo `kodix.netlify.app`.
-5. **Comprar el dominio** (`kodix.es`/`.com`, ~10€/año) y apuntarlo a Netlify/Vercel.
-6. **Conectar los formularios** de contacto a un servicio real (Netlify Forms es gratis y automático) para recibir los mensajes por email.
+1. ~~Desbloquear la cuenta GitHub Kodix-developer~~ → **HECHO (2026-07-07)**. Perfil y repo ya visibles públicamente.
+2. ~~Publicar en Netlify o Vercel~~ → **HECHO (2026-07-06)**. Desplegado con Vercel CLI (`npx vercel`) sin depender de GitHub:
+   - Cuenta Vercel ya existente: `kodixdeveloper-7571` (scope/team `kodixx`).
+   - Proyecto: `kodix-portfolio`.
+   - **URL pública:** https://kodix-portfolio.vercel.app (verificado, 200 OK).
+   - Se creó `.env.local` (token OIDC) — ya está en `.gitignore`, no subir a git.
+   - Para futuras actualizaciones: repetir `cd "Mi porfolio" && npx vercel --prod --yes` tras cada cambio (tiene el proyecto ya enlazado, no vuelve a preguntar).
+3. ~~Hacer el `git push` a GitHub~~ → **HECHO (2026-07-07)**. Repo subido a `https://github.com/Kodix-developer/Mi-porfolio`.
+4. **(Opcional) Limpiar el repo**: quitar de la raíz los PNG duplicados `logo modelos.png`, `logo png.png`, `Mi foto.png` (ya están copiados con nombre limpio en `img/`).
+5. **Comprar el dominio** (`kodix.es`/`.com`, ~10€/año) y apuntarlo al proyecto de Vercel (Vercel → Project → Domains).
+6. **Conectar los formularios** de contacto a un servicio real. Con Vercel puede usarse un endpoint propio o un servicio como Formspree/Web3Forms (Netlify Forms no aplica al no estar en Netlify).
 7. **Google Search Console** → dar de alta la web para que Google la indexe.
 8. **Presencia online** → perfil Instagram/LinkedIn de Kodix con la web enlazada; compartir con círculo cercano.
-9. **A partir de aquí, pasos comerciales** (ver hoja de ruta arriba): kit comercial/precios, primer cliente "fácil", y solo después lo legal (autónomo/gestoría).
+9. ~~Kit comercial/precios~~ → **HECHO (2026-07-06)**. Todo el material comercial vive en una carpeta separada (a propósito, fuera de `Mi porfolio` para que nunca se publique por accidente al hacer `vercel --prod` o al subir el repo a GitHub):
+   **`C:\Users\alex_\Desktop\Kodix - Documentos comerciales\`**
+   - `Kit-Comercial-Kodix.pdf` — dossier de venta para enseñar al cliente (paquetes 250/490/950€, proceso, condiciones).
+   - `Plantilla-Presupuesto-Kodix.docx` — presupuesto individual editable, para rellenar por cliente (Word, con tabla de conceptos y placeholders entre corchetes).
+   - `Contrato-Servicios-Kodix.docx` — acuerdo de prestación de servicios sencillo (10 cláusulas: objeto, precio/pago, plazos, revisiones, propiedad, confidencialidad, cancelación, mantenimiento, jurisdicción). Es una plantilla orientativa, no revisada por un abogado/gestor — para el primer cliente real conviene una revisión rápida, sobre todo en cuanto al alta de autónomo.
+   - `Guion-Primera-Reunion-Kodix.docx` — guion de apoyo para la primera reunión con un cliente potencial (preguntas clave, cómo presentar los paquetes, objeciones habituales y cómo responderlas, cierre).
+   - Los 3 `.docx` se generaron con la librería `docx` (Node) y se validaron con el validador oficial del skill de docx.
+10. **Primer cliente "fácil"** y resto de pasos comerciales (ver hoja de ruta arriba), y solo después lo legal (autónomo/gestoría) — aunque conviene adelantar el alta de autónomo en cuanto se cierre el primer cliente de pago real, antes de cobrar/facturar.
 
 > Recordatorio: pasos 1-6 son técnicos (Claude Code ayuda al 100%). Del 7 en adelante entra lo comercial (lo ejecuta Alejandro, con guía).
