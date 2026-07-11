@@ -4,17 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO básico: cambia estos textos por los tuyos -->
+  <!-- SEO básico -->
   <title>&lt;Kodix/&gt; | Desarrollo web, apps y soluciones digitales</title>
   <meta name="description" content="Kodix: desarrollo web, apps para Android e iOS, SEO e inteligencia artificial para negocios locales y autónomos. Ideas que construyen futuro." />
 
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+
+  <!-- Tipografías: Space Grotesk (títulos), Inter (texto), JetBrains Mono (detalles código) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
+  <!-- Barra de progreso de scroll (se rellena al bajar) -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
   <!-- ================= CABECERA / NAV ================= -->
-  <header class="site-header">
+  <header class="site-header" id="siteHeader">
     <nav class="nav container">
       <a href="#inicio" class="logo"><span class="logo-b">&lt;</span>Kod<span class="logo-accent">ix</span><span class="logo-b"> /&gt;</span></a>
 
@@ -23,10 +32,10 @@
       </button>
 
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#servicios" data-nav>Servicios</a></li>
+        <li><a href="#portfolio" data-nav>Portfolio</a></li>
+        <li><a href="#sobre-mi" data-nav>Sobre mí</a></li>
+        <li><a href="#testimonios" data-nav>Testimonios</a></li>
         <li><a href="#contacto" class="btn btn-nav">Contacto</a></li>
       </ul>
     </nav>
@@ -36,70 +45,115 @@
 
     <!-- ================= 1. HERO / INICIO ================= -->
     <section id="inicio" class="hero">
+      <!-- Capas decorativas del fondo -->
+      <canvas id="particles" class="hero-particles" aria-hidden="true"></canvas>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="orb orb-1" aria-hidden="true"></div>
+      <div class="orb orb-2" aria-hidden="true"></div>
+      <div class="orb orb-3" aria-hidden="true"></div>
+
       <div class="container hero-content">
+        <p class="hero-badge"><span class="badge-dot"></span> Disponible para nuevos proyectos</p>
+
         <p class="hero-eyebrow">Desarrollo web · Apps · SEO · IA</p>
-        <h1>Webs y apps que hacen crecer tu negocio</h1>
+
+        <h1>Webs y apps que hacen <span class="gradient-text">crecer tu negocio</span></h1>
+
+        <!-- Línea estilo terminal con texto que se escribe solo -->
+        <p class="hero-typed">
+          <span class="typed-prompt">&gt;</span> kodix.crear(<span class="typed-word" id="typedWord"></span><span class="typed-cursor">|</span>)
+        </p>
+
         <p class="hero-text">
           En Kodix creo webs a medida y aplicaciones móviles rápidas y modernas,
           para negocios locales y autónomos que quieren conseguir más clientes.
         </p>
+
         <div class="hero-actions">
           <a href="#contacto" class="btn btn-primary">Pide presupuesto</a>
           <a href="#portfolio" class="btn btn-outline">Ver trabajos</a>
         </div>
+
+        <!-- Mini estadísticas con contador animado -->
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num" data-count="3" data-suffix="">0</span>
+            <span class="stat-label">webs demo</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="100" data-suffix="%">0</span>
+            <span class="stat-label">a medida</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="24" data-suffix="h">0</span>
+            <span class="stat-label">tiempo de respuesta</span>
+          </div>
+        </div>
       </div>
+
+      <!-- Indicador de scroll -->
+      <a href="#servicios" class="scroll-hint" aria-label="Bajar a servicios"><span></span></a>
     </section>
+
+    <!-- ================= MARQUESINA DE TECNOLOGÍAS ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>HTML5</span><em>◆</em><span>CSS3</span><em>◆</em><span>JavaScript</span><em>◆</em><span>Responsive</span><em>◆</em><span>SEO local</span><em>◆</em><span>Inteligencia Artificial</span><em>◆</em><span>Android</span><em>◆</em><span>iOS</span><em>◆</em><span>Git</span><em>◆</em><span>Vercel</span><em>◆</em>
+        <span>HTML5</span><em>◆</em><span>CSS3</span><em>◆</em><span>JavaScript</span><em>◆</em><span>Responsive</span><em>◆</em><span>SEO local</span><em>◆</em><span>Inteligencia Artificial</span><em>◆</em><span>Android</span><em>◆</em><span>iOS</span><em>◆</em><span>Git</span><em>◆</em><span>Vercel</span><em>◆</em>
+      </div>
+    </div>
 
     <!-- ================= 2. SERVICIOS ================= -->
     <section id="servicios" class="section">
       <div class="container">
-        <h2 class="section-title">Servicios</h2>
-        <p class="section-subtitle">Todo lo que necesitas para estar online.</p>
+        <p class="section-tag reveal">// 01. servicios</p>
+        <h2 class="section-title reveal">Servicios</h2>
+        <p class="section-subtitle reveal">Todo lo que necesitas para estar online.</p>
 
         <div class="grid grid-3">
-          <article class="card">
+          <article class="card reveal">
             <div class="card-icon">🌐</div>
             <h3>Web a medida</h3>
             <p>Diseño único para tu negocio, sin plantillas genéricas. Rápida y adaptada a móvil.</p>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <div class="card-icon">🚀</div>
             <h3>Landing page</h3>
             <p>Una página potente centrada en captar clientes: servicios, contacto y llamada a la acción.</p>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <div class="card-icon">📱</div>
             <h3>Apps móviles</h3>
             <p>Aplicaciones para Android e iOS a medida, para que tu negocio llegue al móvil de tus clientes.</p>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <div class="card-icon">🔧</div>
             <h3>Mantenimiento</h3>
             <p>Me encargo de las actualizaciones, copias de seguridad y cambios. Tú te olvidas.</p>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <div class="card-icon">📍</div>
             <h3>SEO local</h3>
             <p>Alta en Google y en Google Maps para que te encuentren los clientes de tu zona.</p>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <div class="card-icon">✍️</div>
             <h3>Textos y contenido</h3>
             <p>Redacto los textos de tu web para que transmitan confianza y vendan.</p>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <div class="card-icon">🎨</div>
             <h3>Identidad básica</h3>
             <p>Logo sencillo y elección de colores para dar coherencia a tu marca.</p>
           </article>
 
-          <article class="card">
+          <article class="card reveal">
             <div class="card-icon">🤖</div>
             <h3>Inteligencia artificial</h3>
             <p>Integro IA en tu negocio: chatbots, automatizaciones y soluciones a medida.</p>
@@ -111,35 +165,60 @@
     <!-- ================= 3. PORTFOLIO (lo más importante) ================= -->
     <section id="portfolio" class="section section-alt">
       <div class="container">
-        <h2 class="section-title">Portfolio</h2>
-        <p class="section-subtitle">Ejemplos de webs que puedo crear para ti.</p>
+        <p class="section-tag reveal">// 02. portfolio</p>
+        <h2 class="section-title reveal">Portfolio</h2>
+        <p class="section-subtitle reveal">Ejemplos de webs que puedo crear para ti.</p>
 
         <div class="grid grid-3">
-          <!-- Sustituye estos por tus webs demo reales cuando las tengas -->
-          <article class="work">
-            <a href="demos/restaurante/index.html" target="_blank" rel="noopener" class="work-thumb work-thumb-1">Restaurante</a>
+          <article class="work reveal" data-tilt>
+            <a href="demos/restaurante/index.html" target="_blank" rel="noopener" class="work-thumb">
+              <!-- Mini navegador de mentira -->
+              <span class="browser-bar"><i></i><i></i><i></i><b>laparra.es</b></span>
+              <span class="browser-screen screen-1">
+                <span class="screen-emoji">🍷</span>
+                <span class="skeleton sk-1"></span>
+                <span class="skeleton sk-2"></span>
+                <span class="skeleton sk-3"></span>
+              </span>
+            </a>
             <div class="work-body">
               <h3>Restaurante La Parra</h3>
               <p>Web con carta, reservas y ubicación. (Demo)</p>
-              <a href="demos/restaurante/index.html" target="_blank" rel="noopener" class="work-link">Ver demo →</a>
+              <a href="demos/restaurante/index.html" target="_blank" rel="noopener" class="work-link">Ver demo <span class="arrow">→</span></a>
             </div>
           </article>
 
-          <article class="work">
-            <a href="demos/peluqueria/index.html" target="_blank" rel="noopener" class="work-thumb work-thumb-2">Peluquería</a>
+          <article class="work reveal" data-tilt>
+            <a href="demos/peluqueria/index.html" target="_blank" rel="noopener" class="work-thumb">
+              <span class="browser-bar"><i></i><i></i><i></i><b>peluqueriaestilo.es</b></span>
+              <span class="browser-screen screen-2">
+                <span class="screen-emoji">💇</span>
+                <span class="skeleton sk-1"></span>
+                <span class="skeleton sk-2"></span>
+                <span class="skeleton sk-3"></span>
+              </span>
+            </a>
             <div class="work-body">
               <h3>Peluquería Estilo</h3>
               <p>Servicios, precios y reserva de cita online. (Demo)</p>
-              <a href="demos/peluqueria/index.html" target="_blank" rel="noopener" class="work-link">Ver demo →</a>
+              <a href="demos/peluqueria/index.html" target="_blank" rel="noopener" class="work-link">Ver demo <span class="arrow">→</span></a>
             </div>
           </article>
 
-          <article class="work">
-            <a href="demos/fontaneria/index.html" target="_blank" rel="noopener" class="work-thumb work-thumb-3">Autónomo</a>
+          <article class="work reveal" data-tilt>
+            <a href="demos/fontaneria/index.html" target="_blank" rel="noopener" class="work-thumb">
+              <span class="browser-bar"><i></i><i></i><i></i><b>fontaneriarapida.es</b></span>
+              <span class="browser-screen screen-3">
+                <span class="screen-emoji">🔧</span>
+                <span class="skeleton sk-1"></span>
+                <span class="skeleton sk-2"></span>
+                <span class="skeleton sk-3"></span>
+              </span>
+            </a>
             <div class="work-body">
               <h3>Fontanería Rápida</h3>
               <p>Landing con servicios y botón de WhatsApp directo. (Demo)</p>
-              <a href="demos/fontaneria/index.html" target="_blank" rel="noopener" class="work-link">Ver demo →</a>
+              <a href="demos/fontaneria/index.html" target="_blank" rel="noopener" class="work-link">Ver demo <span class="arrow">→</span></a>
             </div>
           </article>
         </div>
@@ -149,27 +228,36 @@
     <!-- ================= 4. SOBRE MÍ ================= -->
     <section id="sobre-mi" class="section">
       <div class="container about">
-        <div class="about-photo">
-          <img src="img/alejandro.png" alt="Alejandro, fundador de Kodix" />
+        <div class="about-photo-wrap reveal">
+          <!-- Anillo de gradiente que gira alrededor de la foto -->
+          <div class="about-ring" aria-hidden="true"></div>
+          <div class="about-photo">
+            <img src="img/alejandro.png" alt="Alejandro, fundador de Kodix" />
+          </div>
+          <!-- Chips flotantes alrededor de la foto -->
+          <span class="float-chip chip-1" aria-hidden="true">&lt;/&gt;</span>
+          <span class="float-chip chip-2" aria-hidden="true">📱</span>
+          <span class="float-chip chip-3" aria-hidden="true">🤖</span>
         </div>
         <div class="about-text">
-          <h2 class="section-title">Sobre mí</h2>
-          <p>
+          <p class="section-tag reveal">// 03. sobre mí</p>
+          <h2 class="section-title reveal">Sobre mí</h2>
+          <p class="reveal">
             Soy Alejandro, fundador de <strong>Kodix</strong> y estudiante de
             Desarrollo de Aplicaciones Multiplataforma (DAM). Ayudo a negocios
             locales y autónomos a tener una web profesional sin complicaciones.
           </p>
-          <p>
+          <p class="reveal">
             Además de webs, también desarrollo <strong>aplicaciones móviles
             para Android e iOS</strong>, por si tu negocio necesita dar el
             salto a una app.
           </p>
-          <p>
+          <p class="reveal">
             Trabajo de forma cercana: te explico todo en cristiano, cumplo los
             plazos y me encargo de la parte técnica para que tú te centres en tu
             negocio.
           </p>
-          <a href="#contacto" class="btn btn-primary">Hablemos</a>
+          <a href="#contacto" class="btn btn-primary reveal">Hablemos</a>
         </div>
       </div>
     </section>
@@ -177,19 +265,20 @@
     <!-- ================= 5. TESTIMONIOS ================= -->
     <section id="testimonios" class="section section-alt">
       <div class="container">
-        <h2 class="section-title">Testimonios</h2>
-        <p class="section-subtitle">Lo que dicen los clientes. (Se irán añadiendo).</p>
+        <p class="section-tag reveal">// 04. testimonios</p>
+        <h2 class="section-title reveal">Testimonios</h2>
+        <p class="section-subtitle reveal">Lo que dicen los clientes. (Se irán añadiendo).</p>
 
         <div class="grid grid-3">
-          <blockquote class="quote">
+          <blockquote class="quote reveal">
             <p>"Aquí irá el testimonio de tu primer cliente. Pídelo a cambio de un buen precio."</p>
             <footer>— Futuro cliente</footer>
           </blockquote>
-          <blockquote class="quote">
+          <blockquote class="quote reveal">
             <p>"Un par de frases sobre cómo les ayudó la web genera muchísima confianza."</p>
             <footer>— Futuro cliente</footer>
           </blockquote>
-          <blockquote class="quote">
+          <blockquote class="quote reveal">
             <p>"Con foto y nombre real convierten todavía más."</p>
             <footer>— Futuro cliente</footer>
           </blockquote>
@@ -200,29 +289,32 @@
     <!-- ================= 6. CONTACTO / CTA ================= -->
     <section id="contacto" class="section">
       <div class="container contact">
-        <h2 class="section-title">Hablemos de tu web</h2>
-        <p class="section-subtitle">Cuéntame tu proyecto y te respondo con un presupuesto sin compromiso.</p>
+        <div class="contact-panel reveal">
+          <p class="section-tag">// 05. contacto</p>
+          <h2 class="section-title">Hablemos de tu web</h2>
+          <p class="section-subtitle">Cuéntame tu proyecto y te respondo con un presupuesto sin compromiso.</p>
 
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="form-row">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre" required />
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-          </div>
-          <div class="form-row">
-            <label for="mensaje">¿Qué necesitas?</label>
-            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
-          <p class="form-status" id="formStatus" role="status"></p>
-        </form>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-row">
+              <label for="mensaje">¿Qué necesitas?</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+            <p class="form-status" id="formStatus" role="status"></p>
+          </form>
 
-        <div class="contact-alt">
-          <a href="https://wa.me/34684085186" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
-          <a href="mailto:kodixdeveloper@gmail.com" class="btn btn-outline">✉️ Email</a>
+          <div class="contact-alt">
+            <a href="https://wa.me/34684085186" class="btn btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
+            <a href="mailto:kodixdeveloper@gmail.com" class="btn btn-outline">✉️ Email</a>
+          </div>
         </div>
       </div>
     </section>
@@ -237,6 +329,9 @@
       <p>© <span id="year"></span> Kodix · Desarrollo web, apps y soluciones digitales</p>
     </div>
   </footer>
+
+  <!-- Botón volver arriba -->
+  <a href="#inicio" class="back-top" id="backTop" aria-label="Volver arriba">↑</a>
 
   <script src="js/main.js"></script>
 </body>

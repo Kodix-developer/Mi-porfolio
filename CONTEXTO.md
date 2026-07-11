@@ -149,10 +149,10 @@ Para construir la **web personal de servicios**, elegir tecnología:
 - **Git listo:** repo inicializado en `Mi porfolio` con commit inicial hecho y remoto configurado a `https://github.com/Kodix-developer/Mi-porfolio.git`.
 - (Aparte) Se limpió un repo git mal ubicado que había en `C:\Users\alex_` (rastreaba todo el perfil de Windows por error). Eliminado sin afectar archivos.
 
-### ⚠️ Bloqueo actual
-- La cuenta de GitHub **`Kodix-developer` está "flagged"** (marcada por antifraude): da 404 pública/API aunque el dueño la ve logueado.
-- Ya se activó la **2FA** (requisito para contactar soporte). Pendiente: esperar a que se desmarque sola o abrir ticket en `support.github.com/contact`.
-- **El `git push` está en pausa** hasta que la cuenta se active. Cuando lo esté → un solo `git push -u origin main` y subido.
+### ✅ Bloqueo resuelto (2026-07-07)
+- La cuenta de GitHub **`Kodix-developer`** ya no está marcada — perfil y repo visibles públicamente.
+- `git push -u origin main` hecho con éxito. Repo `Mi-porfolio` subido a GitHub (3 commits).
+- (Nota técnica) El push inicial falló por una credencial de otra cuenta guardada en el Credential Manager de Windows; se borró (`cmdkey /delete`) y al reintentar pidió login correcto.
 
 ---
 
